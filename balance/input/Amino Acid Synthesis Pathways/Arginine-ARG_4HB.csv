@@ -1,0 +1,16 @@
+#,Reaction,ATP,NADH,Fdred,CO2,HCO3-,Acetyl-CoA,Pyruvate,N2,H2,NH3,Carbamoyl-Phosphate,N2-Acetyl-L-Ornithine,N-Acetyl-L-Citrulline,Acetate,L-Citrulline,2-Oxoglutarate,L-glutamate,N-Acetyl-L-glutamate,H2O,N-Acetyl-glutamate-5-phosphate,N-Acetyl-glutamate-5-semialdehyde,L-Arginine,EC Number,Reference,Notes
+,,Input,Input,Input,Input/Output,Input/Output,Intermediate,Intermediate,Input,Output,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Input/Output,Intermediate,Intermediate,Target,,,
+1,1 CO2 + 1 HCO3- + 3 ATP + 1 NADH + 6 Fd → 2 acetyl-CoA,-3,-1,-6,-1,-1,2,,,,,,,,,,,,,,,,,Calvin Cycle,Salimijazi2020b,
+2,2 pyruvate → 2 acetyl-coA + 2 NADH + 2 CO2,,2,,2,,2,-2,,,,,,,,,,,,,,,,Calvin Cycle,Salimijazi2020b,
+3,16 ATP + 8 Fdred + N2 → 2 NH3 + 1 H2,-16,,-8,,,,,-1,1,2,,,,,,,,,,,,,1.18.6.1,KEGG,Not sure how often N2ase produces an H2. 
+4,2 ATP + 1 NH3 + 1 HCO3 → 1 Carbamoyl-phosphate,-2,,,,-1,,,,,-1,1,,,,,,,,,,,,6.3.4.16,KEGG,
+5,1 Carbamoyl-phosphate + 1 N2-Acetyl-L-Ornithine → 1 N-Acetyl-L-Citrulline,,,,,,,,,,,-1,-1,1,,,,,,,,,,2.1.3.9,KEGG,
+6,1 N-Acetyl-L-Citrulline → 1 Acetate + 1 L-Citrulline,,,,,,,,,,,,,-1,1,1,,,,,,,,3.5.1.16,KEGG,
+7,1 L-Citrulline + 1 NH3 → 1 L-Arginine,,,,,,,,,,-1,,,,,-1,,,,,,,1,3.5.3.6,KEGG,
+8,1 Pyruvate + 1 Acetyl CoA + 1 ATP + 1 HCO3 → 2-Oxoglutarate + 1 CO2 + 1 NADH,-1,1,,1,-1,-1,-1,,,,,,,,,1,,,,,,,TCA Cycle,,
+9,2-Oxoglutarate + 1 NH3 + 1 NADH → 1 L-glutamate + H2O,,-1,,,,,,,,-1,,,,,,-1,1,,1,,,,1.4.1.2,KEGG,
+10,1 Acetyl-CoA + 1 L-glutamate → 1 N-Acetyl-L-glutamate,,,,,,-1,,,,,,,,,,,-1,1,,,,,2.3.1.1,KEGG,
+11,1 ATP + 1 N-Acetyl-L-glutamate → 1 N-Acetyl-glutamate-5-phosphate,-1,,,,,,,,,,,,,,,,,-1,,1,,,2.7.2.8,KEGG,
+12,1 N-Acetyl-glutamate-5-phosphate + 1 NADH → 1 N-Acetyl-glutamate-5-semialdehyde,,-1,,,,,,,,,,,,,,,,,,-1,1,,1.2.1.38,KEGG,
+13,1 N-Acetyl-glutamate-5-semialdehyde + 1 L-glutamate → 1 N2-Acetyl-L-Ornithine + 2-Oxoglutarate,,,,,,,,,,,,1,,,,1,-1,,,,-1,,2.6.1.11,KEGG,
+14,1 Acetate + 1 ATP → 1 Acetyl-CoA,-1,,,,,1,,,,,,,,-1,,,,,,,,,6.2.1.1,KEGG,

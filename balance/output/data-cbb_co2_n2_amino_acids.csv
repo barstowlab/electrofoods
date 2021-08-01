@@ -1,0 +1,21 @@
+Scenario,ATP,NADH,Fdred,CO2,HCO3-,HCO2-,Target Molecule,Target,
+TYR_CBB,36,18,3,8,0,0,L-Tyrosine,1
+Cys_CBB,16,4,9,3,0,0,L-Cysteine,1
+Met_CBB,17,5,11,2,0,0,L-Methionine,1
+LEU_CBB,29,15,3,6,0,0,L-Leucine,1
+ASP_CBB,16,6,3,3,1,0,L-Asparatate,1
+GLU_CBB,23,8,4,3,1,0,L-Glutamate,1
+TRP_CBB,69,33,8,16,0,0,Tryptophan,1
+PRO_CBB,22,10,3,3,0,0,L-Proline,1
+VAL_CBB,22,12,3,5,0,0,L-Valine,1
+SER_CBB,14,5,3,3,0,0,L-Serine,1
+ARG_CBB,51,11,16,4,2,0,L-Arginine,1
+ALA_CBB,15,5,3,1,0,0,L-Alanine,1
+GLN_CBB,32,9,8,4,1,0,L-Glutamine,1
+ASN_CBB,24,6,7,3,1,0,L-Asparagine,1
+GLY_CBB,15,3,4,2,0,0,Glycine,1
+ILE_CBB,29,15,4,6,0,0,L-Isoleucine,1
+GLUC_CBB,18,12,0,6,0,0,D-glucose,1
+THR_CBB,22,11,3,6,0,0,L-Threonine,1
+LYS_CBB,53,20,10,7,1,0,L-Lysine,1
+PHE_CBB,52,30,4,14,0,0,L-Phenyalanine,1
