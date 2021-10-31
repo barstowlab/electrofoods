@@ -6,18 +6,22 @@ PrintStoichiometry
 from numpy import array
 
 
-directory = 'input/Amino Acid Synthesis Pathways/'
-outputFileName = 'output/data-co2_method_average_amino_acid.csv'
+#directory = 'input/Amino Acid Synthesis Pathways/'
+directory = 'input/Dataset S3 - Amino Acid Synthesis Pathways Draft 2/'
+
+
+outputFileName = 'output/data-co2_method_average_amino_acid_2.csv'
+
 ensure_dir(outputFileName)
 
 startIndex = 2
 endIndexOffset = 3
-printIntermediates = False
+printIntermediates = True
 
 
 reactantsToGet = ['ATP', 'NADH', 'Fdred', 'CO2', 'HCO3-', 'HCO2-']
 co2FixationMethods = ['CBB', 'WL', 'RTCA', '3HP', '4HB', '3HP4HB', 'FORM']
-# co2FixationMethods = ['CBB']
+# co2FixationMethods = ['4HB']
 
 
 # Initialize dictionary for storing calculation results

@@ -1,0 +1,7 @@
+#,Reaction,ATP,NADH,Fdred,CO2,HCO3-,Acetyl-CoA,Pyruvate,HCO2-,3-PG,N2,NH3,H2,D-Serine,L-Serine,EC Number,Reference,Notes
+,,Input,Input,Input,Input/Output,Input/Output,Intermediate,Intermediate,Input,Intermediate,Input,Intermediate,Input/Output,Intermediate,Target,,,
+1,6 HCO2- + 10 ATP + 4 NADH → 2 3-PG,-10,-4,,,,,,-6,2,,,,,,Formolase Pathway,"Siegel et al. {Siegel2015a}, Bar-Even et al. {Bar-Even2016a}",
+2,2 3-PG → 2 pyruvate + 2 ATP ,2,,,,,,2,,-2,,,,,,,Berg et al. {Berg2007a},
+3,16 ATP + 8 Fdred + N2 → 2 NH3 + 1 H2,-16,,-8,,,,,,,-1,2,1,,,1.18.6.1,KEGG,
+4,Pyruvate + NH3 → D-Serine,,,,,,,-1,,,,-1,,1,,4.3.1.18,KEGG,
+5,D-Serine → L-Serine,,,,,,,,,,,,,-1,1,5.1.1.18,KEGG,

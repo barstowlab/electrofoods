@@ -208,23 +208,16 @@ def FindTargetIndex(ioStatus):
 # ------------------------------------------------------------------------------------------------ #
 
 
-
 # ------------------------------------------------------------------------------------------------ #
-def BalanceStoichiometricMatrix(matrix, startIndex, endIndex):
-
-	import pdb
+def SolveFluxBalanceEquation(sMatrix, reactions, reactants, ioStatus):
+	
 	from numpy import ones, dot
-
-	sMatrix, reactions, reactants, ioStatus = \
-	GenerateStoichiometricMatrix(matrix, startIndex, endIndex)
 	
 	try:
 		targetIndex = FindTargetIndex(ioStatus)
 	except:
 		pdb.set_trace()
 		
-	#pdb.set_trace()
-	
 	# Calculate the change of concentration vector
 	fVector0 = ones(len(reactions), float)
 	cDotVector0 = matmul(sMatrix, fVector0)
@@ -244,8 +237,22 @@ def BalanceStoichiometricMatrix(matrix, startIndex, endIndex):
 	normalizationFactor = cDotVectorOpt[targetIndex]
 	
 	cDotVectorOptNorm = cDotVectorOpt / normalizationFactor
+
+
+	return [fVectorOpt, cDotVectorOpt, cDotVectorOptNorm, result]
+# ------------------------------------------------------------------------------------------------ #
+
+
+
+
+# ------------------------------------------------------------------------------------------------ #
+def BalanceStoichiometricMatrix(matrix, startIndex, endIndex):
+
+	sMatrix, reactions, reactants, ioStatus = \
+	GenerateStoichiometricMatrix(matrix, startIndex, endIndex)
 	
-	#pdb.set_trace()
+	[fVectorOpt, cDotVectorOpt, cDotVectorOptNorm, result] = \
+	SolveFluxBalanceEquation(sMatrix, reactions, reactants, ioStatus)
 
 	return [sMatrix, reactions, fVectorOpt, cDotVectorOpt, cDotVectorOptNorm, reactants, ioStatus, \
 	result]
@@ -395,3 +402,140 @@ printIntermediates=False):
 	return [dictKeyArray, nATPArray, nNADHArray, nFdredArray]
 
 # ------------------------------------------------------------------------------------------------ #
+
+
+# ----------------------------------------------------------------------------------------------- #
+def FindUniqueTerms(sideSplit):
+
+	compoundArray = []
+	for term in sideSplit:
+		termSplit = term.split('*')
+		if len(termSplit) == 1:
+			compound = termSplit[0].strip()
+			compoundArray.append(compound)
+		elif len(termSplit) == 2:
+			compound = termSplit[1].strip()
+			compoundArray.append(compound)
+		else:
+			print("Something weird is going on, length of termSplit is longer than 2.")
+	
+	return compoundArray
+# ----------------------------------------------------------------------------------------------- #
+
+# ----------------------------------------------------------------------------------------------- #
+def GenerateUniqueCompoundsList(dataSplit):
+	compoundArray = []
+
+	for line in dataSplit:
+		lhs = line[0].split('+')
+		rhs = line[1].split('+')
+	
+		lhsCompounds = FindUniqueTerms(lhs)
+		rhsCompounds = FindUniqueTerms(rhs)
+	
+		compoundArray += lhsCompounds
+		compoundArray += rhsCompounds
+
+	uniqueCompounds = unique(compoundArray)
+
+	return uniqueCompounds
+# ----------------------------------------------------------------------------------------------- #
+
+
+# ----------------------------------------------------------------------------------------------- #
+def UpdateSMatrixWithMultipliers(sideSplit, signMultiplier, sMatrixT, rowIndex):
+
+	for term in sideSplit:
+		termSplit = term.split('*')
+		if len(termSplit) == 1:
+			compound = termSplit[0].strip()
+			multiplier = 1*signMultiplier
+		elif len(termSplit) == 2:
+			compound = termSplit[1].strip()
+			multiplier = int(termSplit[0].strip())*signMultiplier
+		else:
+			print("Something weird is going on, length of termSplit is longer than 2.")
+		
+		sMatrixT[rowIndex][compound] += multiplier
+	
+	return
+# ----------------------------------------------------------------------------------------------- #
+
+# ----------------------------------------------------------------------------------------------- #
+def ConvertIndexedSMatrix(sMatrixTKeyIndexed, uniqueCompounds):
+	
+	from numpy import int8
+	import pdb
+	
+	nCols = len(uniqueCompounds)
+	nRows = sMatrixTKeyIndexed.shape[0]
+	sMatrixT = zeros((nRows, nCols), dtype=int8)
+	
+	
+	i = 0
+	while i < nRows:
+		j = 0
+		while j < nCols:
+			sMatrixT[i][j] = sMatrixTKeyIndexed[i][uniqueCompounds[j]]
+			j += 1
+		i += 1
+	
+
+	return sMatrixT
+# ----------------------------------------------------------------------------------------------- #
+
+# ----------------------------------------------------------------------------------------------- #
+def ImportReactionFile(filename, reactionArrow='→'):
+	# Open up the file
+	fileHandle = open(filename, 'r')
+	data = fileHandle.readlines()
+
+
+	# Clean up the file a bit
+	dataClean = []
+
+	for line in data:
+		dataClean.append(line.strip())
+
+
+	# Start splitting the chemical equations into left and right hand sides
+	dataSplit = []
+
+	for line in dataClean:
+		lineSplit = line.split(reactionArrow)
+		dataSplit.append(lineSplit)
+	
+	# Make a list of all of the compounds involved
+	uniqueCompounds = GenerateUniqueCompoundsList(dataSplit)
+
+
+	# Generate a dtypeArray for the stoichiometric matrix
+	dtypeArray = []
+	i = 0
+	while i < len(uniqueCompounds):
+		dtypeArray.append((uniqueCompounds[i], int8))
+		i += 1
+
+	sMatrixTKeyIndexed = zeros(len(dataClean), dtype=dtypeArray)
+
+
+	# Populate the stoichiometric matrix
+	i = 0
+	while i < len(dataSplit):
+		line = dataSplit[i]
+		lhs = line[0].split('+')
+		rhs = line[1].split('+')
+	
+		UpdateSMatrixWithMultipliers(lhs, -1, sMatrixTKeyIndexed, i)
+		UpdateSMatrixWithMultipliers(rhs, 1, sMatrixTKeyIndexed, i)
+	
+		i += 1
+	
+	reactions = dataClean
+		
+	return uniqueCompounds, reactions, sMatrixTKeyIndexed
+# ----------------------------------------------------------------------------------------------- #
+
+
+
+

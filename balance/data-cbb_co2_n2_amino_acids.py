@@ -6,8 +6,10 @@ PrintStoichiometry
 from numpy import array
 
 
-directory = 'input/Amino Acid Synthesis Pathways/'
-outputFileName = 'output/data-cbb_co2_n2_amino_acids.csv'
+#directory = 'input/Amino Acid Synthesis Pathways/'
+directory = 'input/Dataset S3 - Amino Acid Synthesis Pathways Draft 2/'
+
+outputFileName = 'output/data-cbb_co2_n2_amino_acids_2.csv'
 ensure_dir(outputFileName)
 
 # Find all of the matrices using the Calvin cycle
@@ -16,6 +18,7 @@ reactantsToGet = ['ATP', 'NADH', 'Fdred', 'CO2', 'HCO3-', 'HCO2-']
 
 
 fileList = GenerateFileList(directory=directory, regex=regText, ignoreCase=True)
+# fileList = fileList[0]
 
 startIndex = 2
 endIndexOffset = 3
