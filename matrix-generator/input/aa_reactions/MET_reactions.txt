@@ -1,0 +1,13 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*ATP + 1*Pyruvate + 1*HCO3- → Oxaloacetate
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O 
+Oxaloacetate + L-Glutamate → L-Aspartate + 2-Oxoglutarate
+1*ATP + L-Aspartate → 4-Phospho-L-aspartate
+4-Phospho-L-aspartate + 1*NADH → L-aspartate-4-semialdehyde
+L-aspartate-4-semialdehyde + 1*H2S + 2*Fdred → L-Homocysteine
+5-methyltetrahydrofolate + L-Homocysteine → tetrahydrofolate + L-Methionine
+TrxOx + 1*NADH → TrxRed
+TrxRed + 3’-Phosphoadenylyl-sulfate → TrxOx + Sulfite + Adenosine-3’,5’-bisphosphate
+Sulfite + 3*NADH → H2S
+Sulfate + Adenosine-3’,5’-bisphosphate → 3’-Phosphoadenylyl-sulfate
+tetrahydrofolate + Acetyl-CoA → 5-methyltetrahydrofolate + CoA + CO

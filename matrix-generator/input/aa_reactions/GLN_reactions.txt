@@ -1,0 +1,4 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*Pyruvate + 1*Acetyl-CoA + 1*ATP + 1*HCO3- → 2-Oxoglutarate + CO2 + 1*NADH
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O
+1*ATP + L-Glutamate + 1*NH3 → Orthophosphate + L-Glutamine 

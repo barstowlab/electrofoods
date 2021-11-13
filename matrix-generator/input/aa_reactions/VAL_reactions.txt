@@ -1,0 +1,8 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*Pyruvate + 1*Acetyl-CoA + 1*ATP + 1*HCO3- → 2-Oxoglutarate + CO2 + 1*NADH
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O
+2*Pyruvate → (S)-2-Acetolactate + CO2
+(S)-2-Acetolactate → 3-Hydroxy-3-methyl-2-oxobutanoic acid
+3-Hydroxy-3-methyl-2-oxobutanoic acid + 1*NADH → (R)-2,3-Dihydroxy-3-methylbutanoate
+(R)-2,3-Dihydroxy-3-methylbutanoate → 3-Mehtyl-2-oxobutanoic acid
+3-Mehtyl-2-oxobutanoic acid + L-Glutamate → L-Valine + 2-Oxoglutarate

@@ -1,0 +1,2 @@
+1*CO2 + 1*HCO3- + 3*ATP + 1*NADH + 6*Fdred → 1*Acetyl-CoA
+2*Fdred + 1*Acetyl-CoA + 1*CO2 → 1*Pyruvate

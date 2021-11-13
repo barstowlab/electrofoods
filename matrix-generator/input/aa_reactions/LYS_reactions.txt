@@ -1,0 +1,13 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*Pyruvate + 1*Acetyl-CoA + 1*ATP + 1*HCO3- → 2-Oxoglutarate + CO2 + 1*NADH
+1*Pyruvate + Acetyl-CoA + 1*ATP + 1*HCO3— → 2-Oxoglutarate + CO2 + 1*NADH
+1*Pyruvate + Acetyl-CoA + 1*ATP + 1*HCO3— → 2-Oxoglutarate + CO2 + 1*NADH
+Acetyl-CoA + 2-Oxoglutarate → Homocitrate
+Homocitrate → Homo-cis-aconitate
+Homo-cis-aconitate → Homoisocitrate
+Homoisocitrate → 2-Oxoadipate + CO2 + 1*NADH
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O
+2-Oxoadipate + L-Glutamate → L-2-Aminoadipate + 2-Oxoglutarate 
+L-2-Aminoadipate + 1*NADH +1*ATP → L-2-Aminoadipate-6-semialdehyde
+L-Glutamate + L-2-Aminoadipate-6-semialdehyde + 1*NADH → Saccharopine + H2O
+Saccharopine + H2O → L-Lysine + 2-Oxoglutarate + 1*NADH

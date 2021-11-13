@@ -1,0 +1,2 @@
+6*HCO3- + 10*ATP + 12*NADH → 2*Pyruvate
+2*Pyruvate → 2*Acetyl-CoA + 2*NADH + 2*CO2

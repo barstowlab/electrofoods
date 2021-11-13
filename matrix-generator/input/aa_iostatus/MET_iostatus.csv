@@ -1,0 +1,34 @@
+"2-Oxoglutarate",Intermediate
+"3’-Phosphoadenylyl-sulfate",Intermediate
+"4-Phospho-L-aspartate",Intermediate
+"5-methyltetrahydrofolate",Intermediate
+"ATP",Input
+"Acetyl-CoA",Intermediate
+"Adenosine-3’,5’-bisphosphate",Intermediate
+"Adenylyl-Sulfate",Intermediate
+"CO2",Input/Output
+"Citrate",Intermediate
+"Fdred",Input
+"H2",Input/Output
+"H2O",Input/Output
+"H2S",Intermediate
+"HCO3-",Input
+"Isocitrate",Intermediate
+"L-Aspartate",Intermediate
+"L-Glutamate",Intermediate
+"L-Homocysteine",Intermediate
+"L-Methionine",Target
+"L-aspartate-4-semialdehyde",Intermediate
+"N2",Input
+"NADH",Input
+"NH3",Intermediate
+"Oxaloacetate",Intermediate
+"Pyruvate",Intermediate
+"Sulfate",Input
+"Sulfite",Intermediate
+"TrxOx",Intermediate
+"TrxRed",Intermediate
+"cis-Aconitate",Intermediate
+"tetrahydrofolate",Intermediate
+"CoA", Input/Output
+"CO", Input/Output

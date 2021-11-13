@@ -1,0 +1,12 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*Pyruvate + 1*NH3 → D-Serine 
+D-Serine → L-Serine
+L-Serine + Acetyl-CoA → O-Acetyl-L-serine
+O-Acetyl-L-serine + 1*H2S → L-Cysteine + Acetate
+TrxOx + 1*NADH → TrxRed
+1*ATP + Sulfate → Adenylyl-Sulfate 
+1*ATP + Adenylyl-Sulfate → 3prime-Phosphoadenylyl-sulfate 
+TrxRed + 3prime-Phosphoadenylyl-sulfate → TrxOx + Sulfite + 1*Adenosine-3prime5prime-bisphosphate
+1*Sulfite + 3*NADH → 1*H2S + 3*H2O
+1*Sulfate + 1*Adenosine-3prime5prime-bisphosphate → 3prime-Phosphoadenylyl-sulfate + H2O
+1*Acetate + 1*ATP → Acetyl-CoA

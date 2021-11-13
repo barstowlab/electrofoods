@@ -1,0 +1,28 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+Phosphoenolpyruvate + H2O → 2-Phospho-D-Glycerate
+2-Phospho-D-Glycerate → 3-Phospho-D-Glycerate
+1*ATP + 3-Phospho-D-Glycerate → 3-Phospho-D-Glyceroyl-phosphate 
+3-Phospho-D-Glyceroyl-phosphate + 1*NADH → D-Glyceraldehyde-3-phosphate
+D-Glyceraldehyde-3-phosphate → Glycerone-phosphate 
+Glycerone-phosphate + D-Glyceraldehyde-3-phosphate → beta-D-Fructose-1,6-bisphosphate
+beta-D-Fructose-1,6-bisphosphate + H2O → beta-D-Fructose-6-phosphate 
+1*ATP + 1*Pyruvate + H2O → Phosphoenolpyruvate 
+beta-D-Fructose-6-phosphate + D-Glyceraldehyde-3-phosphate → D-Erythrose-4-phosphate + D-Xylulose-5-phosphate
+Phosphoenolpyruvate + D-Erythrose-4-phosphate + H2O → 2-Dehydro-3-deoxy-D-arabino-heptonate-7-phosphate 
+2-Dehydro-3-deoxy-D-arabino-heptonate-7-phosphate → 3-Dehydroquinate 
+3-Dehydroquinate → 3-Dehydroshikimate + H2O
+3-Dehydroshikimate + 1*NADH → Shikimate
+1*ATP + Shikimate → Shikimate-3-phosphate
+Phosphoenolpyruvate + Shikimate-3-phosphate → Orthophosphate + 5-O-(1-Carboxyvinyl)-3-phosphoshikimate
+5-O-(1-Carboxyvinyl)-3-phosphoshikimate → Chorismate
+Chorismate → Prephenate 
+Prephenate → 3-(4-Hydroxyphenyl)pyruvate + CO2 + 1*NADH
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O
+1*ATP + 1*Pyruvate + 1*HCO3- → ADP + Orthophosphate + Oxaloacetate
+1*Acetyl-CoA + H2O + Oxaloacetate → Citrate + CoA
+Citrate → cis-Aconitate + H2O
+cis-Aconitate + H2O → Isocitrate
+Isocitrate → 2-Oxoglutarate + CO2 + 1*NADH
+3-(4-Hydroxyphenyl)pyruvate + L-Glutamate → L-Tyrosine + 2-Oxoglutarate
+D-Xylulose-5-phosphate → D-Glyceraldehyde-3-phosphate + Acetate
+Acetate + 1*ATP → 1*Acetyl-CoA

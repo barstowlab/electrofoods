@@ -1,0 +1,2 @@
+2*CO2 + 7*ATP + 4*NADH → 1*Acetyl-CoA
+3*CO2 + 7*ATP + 5*NADH → 1*Pyruvate

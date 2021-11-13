@@ -1,0 +1,11 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+1*Pyruvate + 1*NH3 → D-Serine
+D-Serine → L-Serine 
+Acetyl-CoA + 1*NADH → Acetaldehyde
+L-Serine + Glyoxylate → 3-Hydroxypyruvate + Glycine 
+Glycine + Acetaldehyde → L-Threonine
+3-Hydroxypyruvate → Glycoaldehyde + CO2
+Glycoaldehyde + H2O → Glycolate + 1*NADH
+Glycolate → Glyoxylate + NADH
+Malate → Acetyl-CoA + H2O + Glyoxylate 
+1*Pyruvate + CO2 + 1*NADH → Malate

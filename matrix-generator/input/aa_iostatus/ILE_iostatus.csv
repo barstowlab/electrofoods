@@ -1,0 +1,22 @@
+"(R)-2,3-Dihydroxy-3-methylpentanoate",Intermediate
+"(R)-2-Methylmalate",Intermediate
+"(R)-3-Hydroxy-3-methyl-2-oxopentanoate",Intermediate
+"(S)-2-Aceto-2-hydroxybutanoate",Intermediate
+"(S)-3-Methyl-2-oxopentanoic acid",Intermediate
+"2-Methylmaleate",Intermediate
+"2-Oxobutanoate",Intermediate
+"2-Oxoglutarate",Intermediate
+"ATP",Input
+"Acetyl-CoA",Intermediate
+"CO2",Input/Output
+"D-erythro-3-Methylmalate",Intermediate
+"Fdred",Input
+"H2",Input/Output
+"H2O",Input/Output
+"HCO3-",Input
+"L-Glutamate",Intermediate
+"L-Isoleucine",Target
+"N2",Input
+"NADH",Input
+"NH3",Intermediate
+"Pyruvate",Intermediate

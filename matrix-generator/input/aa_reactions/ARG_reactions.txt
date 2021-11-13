@@ -1,0 +1,12 @@
+16*ATP + 8*Fdred + N2 → 2*NH3 + 1*H2
+2*ATP + 1*NH3 + 1*HCO3- → Carbamoyl-phosphate
+Carbamoyl-phosphate + N2-Acetyl-L-Ornithine → 1*N-Acetyl-L-Citrulline
+1*N-Acetyl-L-Citrulline → Acetate + L-Citrulline
+L-Citrulline + 1*NH3 → L-Arginine
+1*Pyruvate + 1*Acetyl-CoA + 1*ATP + 1*HCO3- → 2-Oxoglutarate + CO2 + 1*NADH
+2-Oxoglutarate + 1*NH3 + 1*NADH → L-Glutamate + H2O
+Acetyl-CoA + L-Glutamate → 1*N-Acetyl-L-glutamate 
+1*ATP + N-Acetyl-L-glutamate → 1*N-Acetyl-glutamate-5-phosphate
+1*N-Acetyl-glutamate-5-phosphate + 1*NADH → 1*N-Acetyl-glutamate-5-semialdehyde
+1*N-Acetyl-glutamate-5-semialdehyde + L-Glutamate → 1*N2-Acetyl-L-Ornithine + 2-Oxoglutarate
+1*Acetate + 1*ATP → Acetyl-CoA

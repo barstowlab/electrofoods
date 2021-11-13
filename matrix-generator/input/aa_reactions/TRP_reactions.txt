@@ -1,0 +1,32 @@
+16*ATP + 8*Fdred + N2 →  2*NH3 + 1*H2
+1*Pyruvate + 1*NH3 → D-Serine
+D-Serine → L-Serine 
+1*ATP + L-Glutamate + 1*NH3 → L-Glutamine
+Phosphoenolpyruvate + H2O → 2-Phospho-D-Glycerate
+2-Phospho-D-Glycerate → 3-Phospho-D-Glycerate
+1*ATP + 3-Phospho-D-Glycerate → 3-Phospho-D-Glyceroyl-phosphate 
+3-Phospho-D-Glyceroyl-phosphate + 1*NADH → D-Glyceraldehyde-3-phosphate
+D-Glyceraldehyde-3-phosphate → Glycerone-phosphate 
+Glycerone-phosphate + D-Glyceraldehyde-3-phosphate → beta-D-Fructose-1,6-bisphosphate
+beta-D-Fructose-1,6-bisphosphate + H2O → beta-D-Fructose-6-phosphate 
+1*ATP + 1*Pyruvate + H2O → Phosphoenolpyruvate 
+beta-D-Fructose-6-phosphate + D-Glyceraldehyde-3-phosphate → D-Erythrose-4-phosphate + D-Xylulose-5-phosphate
+Phosphoenolpyruvate + D-Erythrose-4-phosphate + H2O → 2-Dehydro-3-deoxy-D-arabino-heptonate-7-phosphate 
+2-Dehydro-3-deoxy-D-arabino-heptonate-7-phosphate → 3-Dehydroquinate 
+3-Dehydroquinate → 3-Dehydroshikimate + H2O
+3-Dehydroshikimate + 1*NADH → Shikimate
+1*ATP + Shikimate → Shikimate-3-phosphate
+Phosphoenolpyruvate + Shikimate-3-phosphate → 5-O-(1-Carboxyvinyl)-3-phosphoshikimate
+5-O-(1-Carboxyvinyl)-3-phosphoshikimate → Chorismate
+Chorismate + L-Glutamine → Anthranilate +1*Pyruvate + L-Glutamate
+D-Glyceraldehyde-3-phosphate +1*Pyruvate → 2-Dehydro-3-deoxy-6-phospho-D-gluconate
+2-Dehydro-3-deoxy-6-phospho-D-gluconate → H2O + 6-phospho-D-gluconate
+6-phospho-D-gluconate → D-Ribulose-5-phosphate + CO2 + 1*NADH 
+D-Ribulose-5-phosphate → D-Ribose-5-phosphate
+1*ATP + D-Ribose-5-phosphate → 5-Phospho-alpha-D-ribose-1-diphosphate
+Anthranilate + 5-Phospho-alpha-D-ribose-1-diphosphate → N-(5-Phospho-D-ribosyl)anthranilate 
+N-(5-Phospho-D-ribosyl)anthranilate → 1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose-5-phosphate
+1-(2-Carboxyphenylamino)-1-deoxy-D-ribulose-5-phosphate → Indoleglycerol-phosphate + CO2
+L-Serine + Indoleglycerol-phosphate → L-Tryptophan + D-Glyceraldehyde-3-phosphate 
+D-Xylulose-5-phosphate → D-Glyceraldehyde-3-phosphate + Acetate
+Acetate + 1*ATP → 1*Acetyl-CoA

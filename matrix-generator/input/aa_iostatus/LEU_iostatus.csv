@@ -1,0 +1,23 @@
+"(2R,3S)-3-Isopropylmalate",Intermediate
+"(2S)-2-Isopropyl-3-oxosuccinate",Intermediate
+"(R)-2,3-Dihydroxy-3-methylbutanoate",Intermediate
+"(S)-2-Acetolactate",Intermediate
+"2-Isopropylmaleate",Intermediate
+"2-Oxoglutarate",Intermediate
+"3-Hydroxy-3-methyl-2-oxobutanoic acid",Intermediate
+"3-Methyl-2-oxobutanoic acid",Intermediate
+"4-Methyl-2-oxopentanoate",Intermediate
+"ATP",Input
+"Acetyl-CoA",Intermediate
+"CO2",Input/Output
+"Fdred",Input
+"H2",Input/Output
+"H2O",Input/Output
+"HCO3-",Input
+"L-Glutamate",Intermediate
+"L-Leucine",Target
+"N2",Input
+"NADH",Input
+"NH3",Intermediate
+"Pyruvate",Intermediate
+"alpha-Isopropylmalate",Intermediate
