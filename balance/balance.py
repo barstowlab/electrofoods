@@ -40,8 +40,7 @@ for reactant in reactantsToGet:
 # Balance each stoichiometric matrix and record reactant numbers
 for fileName in fileList:
 
-	dictKey = fileName.split('-')[1]
-	dictKey = dictKey.split('.')[0]
+	dictKey = fileName.split('.')[0]
 	
 	print(dictKey)
 	dictKeyArray.append(dictKey)
