@@ -1,8 +1,0 @@
-#,Reaction,ATP,NADH,Fdred,CO2,Glyceraldehyde-3P,Glycerone phosphate,"D-fructose 1,6-bisphosphate",D-fructose 6-phosphate,D-glucose 6-phosphate,D-glucose,EC Number,Reference,Notes
-,,Input,Input,Input,Input/Output,Intermediate,Intermediate,Intermediate,Intermediate,Intermediate,Target,Calvin cycle,http://hyperphysics.phy-astr.gsu.edu/hbase/Biology/calvin.html,
-1,6 CO2 + 18 ATP + 12 NADH → 2 D-glyceraldehyde 3-phosphate,-18,-12,,-6,2,,,,,,EC 1.2.7.1,KEGG,
-8,D-glyceraldehyde 3-phosphate → Glycerone phosphate,,,,,-1,1,,,,,EC 5.3.1.1,KEGG,Glycerone phosphate can also be integrated externally
-9,"Glycerone phosphate + D-glyceraldehyde 3-phosphate → D-fructose 1,6-bisphosphate",,,,,-1,-1,1,,,,EC 4.1.2.13,KEGG,
-10,"D-fructose 1,6-bisphosphate + H2O → D-fructose 6-phosphate + Phosphate",,,,,,,-1,1,,,EC 3.1.3.11,KEGG,
-11,D-fructose 6-phosphate → D-glucose 6-phosphate,,,,,,,,-1,1,,EC 5.3.1.9,KEGG,
-12,D-glucose 6-phosphate + H2O → D-glucose + Phosphate,,,,,,,,,-1,1,EC 3.1.3.9,KEGG,

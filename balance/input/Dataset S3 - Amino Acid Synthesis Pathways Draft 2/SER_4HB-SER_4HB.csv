@@ -1,7 +1,0 @@
-#,Reaction,ATP,NADH,Fdred,CO2,HCO3-,Acetyl-CoA,Pyruvate,N2,NH3,H2,D-Serine,L-Serine,EC Number,Reference,Notes
-,,Input,Input,Input,Input/Output,Input/Output,Intermediate,Intermediate,Input,Intermediate,Input/Output,Intermediate,Target,,,
-1,1 CO2 + 1 HCO3- + 3 ATP + 1 NADH + 6 Fd → 1 acetyl-CoA,-3,-1,-6,-1,-1,1,,,,,,,Dicarboxylate/4-hydroxybutyrate (4HB) Cycle,Huber et al. {Huber2008a},
-2,2 Fdred + Acetyl-CoA + CO2 → Pyruvate,,,-2,-1,,-1,1,,,,,,1.2.7.1,KEGG R01196,
-3,16 ATP + 8 Fdred + N2 → 2 NH3 + 1 H2,-16,,-8,,,,,-1,2,1,,,1.18.6.1,KEGG,
-4,Pyruvate + NH3 → D-Serine,,,,,,,-1,,-1,,1,,4.3.1.18,KEGG,
-5,D-Serine → L-Serine,,,,,,,,,,,-1,1,5.1.1.18,KEGG,

@@ -212,6 +212,7 @@ def FindTargetIndex(ioStatus):
 def SolveFluxBalanceEquation(sMatrix, reactions, reactants, ioStatus):
 	
 	from numpy import ones, dot
+	import pdb
 	
 	try:
 		targetIndex = FindTargetIndex(ioStatus)
@@ -424,6 +425,9 @@ def FindUniqueTerms(sideSplit):
 
 # ----------------------------------------------------------------------------------------------- #
 def GenerateUniqueCompoundsList(dataSplit):
+	
+	from numpy import unique
+	
 	compoundArray = []
 
 	for line in dataSplit:
@@ -445,6 +449,8 @@ def GenerateUniqueCompoundsList(dataSplit):
 # ----------------------------------------------------------------------------------------------- #
 def UpdateSMatrixWithMultipliers(sideSplit, signMultiplier, sMatrixT, rowIndex):
 
+	import pdb
+
 	for term in sideSplit:
 		termSplit = term.split('*')
 		if len(termSplit) == 1:
@@ -455,8 +461,11 @@ def UpdateSMatrixWithMultipliers(sideSplit, signMultiplier, sMatrixT, rowIndex):
 			multiplier = int(termSplit[0].strip())*signMultiplier
 		else:
 			print("Something weird is going on, length of termSplit is longer than 2.")
-		
-		sMatrixT[rowIndex][compound] += multiplier
+	
+		try:
+			sMatrixT[rowIndex][compound] += multiplier
+		except:
+			pdb.set_trace()
 	
 	return
 # ----------------------------------------------------------------------------------------------- #
@@ -464,7 +473,7 @@ def UpdateSMatrixWithMultipliers(sideSplit, signMultiplier, sMatrixT, rowIndex):
 # ----------------------------------------------------------------------------------------------- #
 def ConvertIndexedSMatrix(sMatrixTKeyIndexed, uniqueCompounds):
 	
-	from numpy import int8
+	from numpy import int8, zeros
 	import pdb
 	
 	nCols = len(uniqueCompounds)
@@ -484,8 +493,58 @@ def ConvertIndexedSMatrix(sMatrixTKeyIndexed, uniqueCompounds):
 	return sMatrixT
 # ----------------------------------------------------------------------------------------------- #
 
+
+
+# ----------------------------------------------------------------------------------------------- #
+def GenerateIndexedSMatrixT(compoundsUnique, reactions, reactionArrow='→'):
+	
+	from numpy import int8, zeros
+
+
+	# Start splitting the chemical equations into left and right hand sides
+	dataSplit = []
+
+	for line in reactions:
+		lineSplit = line.split(reactionArrow)
+		dataSplit.append(lineSplit)
+	
+	# Make a list of all of the compounds involved
+	uniqueCompounds = GenerateUniqueCompoundsList(dataSplit)
+
+
+	# Generate a dtypeArray for the stoichiometric matrix
+	dtypeArray = []
+	i = 0
+	while i < len(uniqueCompounds):
+		dtypeArray.append((uniqueCompounds[i], int8))
+		i += 1
+
+	sMatrixTKeyIndexed = zeros(len(reactions), dtype=dtypeArray)
+
+
+	# Populate the stoichiometric matrix
+	i = 0
+	while i < len(dataSplit):
+		line = dataSplit[i]
+		lhs = line[0].split('+')
+		rhs = line[1].split('+')
+	
+		UpdateSMatrixWithMultipliers(lhs, -1, sMatrixTKeyIndexed, i)
+		UpdateSMatrixWithMultipliers(rhs, 1, sMatrixTKeyIndexed, i)
+	
+		i += 1
+
+	
+	return sMatrixTKeyIndexed
+# ----------------------------------------------------------------------------------------------- #
+
+
+
 # ----------------------------------------------------------------------------------------------- #
 def ImportReactionFile(filename, reactionArrow='→'):
+	
+	from numpy import int8, zeros
+	
 	# Open up the file
 	fileHandle = open(filename, 'r')
 	data = fileHandle.readlines()
@@ -537,5 +596,111 @@ def ImportReactionFile(filename, reactionArrow='→'):
 # ----------------------------------------------------------------------------------------------- #
 
 
+# ----------------------------------------------------------------------------------------------- #
+def ExportUniqueCompoundsWithIOStatus(fileName, uniqueCompoundsIOStatus):
+	
+	fileHandle = open(fileName, 'w')
+	
+	for line in uniqueCompoundsIOStatus:
+		outputStr = '"' + line[0] + '"' + ',' + line [1] + '\n' 
+		fileHandle.write(outputStr)
+	
+	fileHandle.close()
+	
+	return
+# ----------------------------------------------------------------------------------------------- #
 
+
+# ----------------------------------------------------------------------------------------------- #
+def GenerateIOStatusList(uniqueCompounds):
+	
+	uniqueCompoundsIOStatus = []
+	
+	for compound in uniqueCompounds:
+		
+		if compound == 'ATP':
+			ioStatus = 'Input'
+		elif compound == 'NADH':
+			ioStatus = 'Input'
+		elif compound == 'Fdred':
+			ioStatus = 'Input'
+		elif compound == 'CO2':
+			ioStatus = 'Input/Output'
+		elif compound == 'HCO3-':
+			ioStatus = 'Input/Output'
+		elif compound == 'HCOO-':
+			ioStatus = 'Input/Output'
+		elif compound == 'H2O':
+			ioStatus = 'Input/Output'
+		elif compound == 'N2':
+			ioStatus == 'Input'
+		elif compound == 'HCO2-':
+			ioStatus == 'Input/Output'
+		elif compound == 'H2':
+			ioStatus == 'Input/Output'
+		else:
+			ioStatus = 'Intermediate'
+		
+		uniqueCompoundsIOStatus.append([compound, ioStatus])
+	
+	return uniqueCompoundsIOStatus
+# ----------------------------------------------------------------------------------------------- #
+
+
+# ----------------------------------------------------------------------------------------------- #
+def ImportIOStatus(fileName):
+	
+	import csv
+	
+	fHandle = open(fileName, 'r')
+	
+	poolColumnToHeaderIndexDict = {}	
+	datareader = csv.reader(fHandle)
+
+	uniqueCompoundsIOStatus = []
+	
+	for row in datareader:
+		uniqueCompoundsIOStatus.append(row)
+
+	return uniqueCompoundsIOStatus
+# ----------------------------------------------------------------------------------------------- #
+
+# ----------------------------------------------------------------------------------------------- #
+def GenerateMergedIOStatusList(uniqueCompounds, iostatusCO2, iostatusAA):
+
+	ioStatusCO2Dict = {}
+	ioStatusAADict = {}
+
+	for line in iostatusCO2:
+		ioStatusCO2Dict[line[0]] = line[1]
+		
+	for line in iostatusAA:
+		ioStatusAADict[line[0]] = line[1]
+		
+	
+	ioStatusCO2DictKeys = ioStatusCO2Dict.keys()
+	ioStatusAADictKeys = ioStatusAADict.keys()
+	
+	mergedIOStatus = []
+	
+	for compound in uniqueCompounds:
+		
+		if compound in ioStatusCO2DictKeys and compound not in ioStatusAADictKeys:
+			mergedIOStatus.append(ioStatusCO2Dict[compound])
+		
+		elif compound not in ioStatusCO2DictKeys and compound in ioStatusAADictKeys:
+			mergedIOStatus.append(ioStatusAADict[compound])
+		
+		elif compound in ioStatusCO2DictKeys and compound in ioStatusAADictKeys:
+			mergedIOStatus.append(ioStatusCO2Dict[compound])
+			
+		else:
+			mergedIOStatus.append('Intermediate')
+	
+		
+	return mergedIOStatus, ioStatusCO2Dict, ioStatusAADict
+	
+	
+	
+# ----------------------------------------------------------------------------------------------- #
 

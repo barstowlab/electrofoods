@@ -1,9 +1,0 @@
-#,Reaction,ATP,NADH,Fdred,CO2,HCO3-,Acetyl-CoA,Pyruvate,N2,NH3,H2,2-Oxoglutarate,L-glutamate,L-Proline,1-pyrroline-5-carboxylate ,EC Number,Reference,Comments
-,,Input,Input,Input,Input/Output,Input,Intermediate,Intermediate,Input,Intermediate,Input/Output,Intermediate,Intermediate,Target,Intermediate,,,
-1,16 ATP + 8 Fdred + N2 → 2 NH3 + 1 H2,-16,0,-8,0,0,0,0,-1,2,1,0,0,0,0,1.18.6.1,KEGG,Not sure how often N2ase produces an H2.
-2,4 CO2 + 4 ATP + 8 NADH → 2 acetyl-CoA,-4,-8,,-4,,2,,0,0,0,0,0,0,0,Reductive TCA cycle,"Alissandratos et al. {Alissandratos2015a}, Claassens et al. {Claassens2016a}",
-3,2 Fdred + Acetyl-CoA + CO2 -> Pyruvate,,,-2,-1,,-1,1,0,0,0,0,0,0,0,1.2.7.1  ,,
-4,1 Pyruvate + 1 Acetyl CoA + 1 ATP + 1 HCO3 → 2-Oxoglutarate + 1 CO2 + 1 NADH,-1,1,0,1,-1,-1,-1,0,0,0,1,0,0,0,TCA Cycle,KEGG,
-5,2-Oxoglutarate + 1 NH3 + 1 NADH → 1 L-glutamate ,0,-1,0,0,0,0,0,0,-1,0,-1,1,0,0,1.4.1.2,KEGG,
-6,L-Glutamate + NADPH -> 1-pyrroline-5-carboxylate ,0,-1,0,0,0,0,0,0,0,0,0,-1,0,1,1.2.1.88,KEGG,
-7,1-pyrroline-5-carboxylate +NADPH -> L-Proline,0,-1,0,0,0,0,0,0,0,0,0,0,1,-1,1.5.1.2,KEGG,
