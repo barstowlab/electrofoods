@@ -130,5 +130,5 @@ dmypy.json
 
 
 *.numbers
-*.DST_Store
+*.DS_Store
 *.dgraph
